@@ -1,4 +1,4 @@
-STM32 packetizer implementation
+STM32 solenoid driver implementation
 
 Cmake based GNU gcc version
 
@@ -11,7 +11,7 @@ cmake -DCMAKE_BUILD_TYPE=Debug ..
 make
 
 Programming via OpenOCD
-sudo /usr/local/bin/openocd -f stm32f4discovery.g -f flash.cfg -c "flash_stm32f4 ../build/packetizer_stm32"
+sudo openocd -f/usr/local/share/openocd/scripts/board/stm32f469discovery.cfg -c "program solenoid_driver verify reset"
 
 Debugging:
 arm-none-eabi-gdb --tui --eval "target remote localhost:3333" packetizer_stm32
